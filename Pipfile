@@ -1,0 +1,31 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[requires]
+python_version = "3.12"
+
+[packages]
+fastapi = "*"
+uvicorn = {extras = ["standard],version = "*"}
+streamlit = "*"
+chromadb = "*"
+sentence-transformers = "*"
+sqlalchemy = "*"
+pydantic = "*"
+python-dotenv = "*"
+httpx = "*"
+networkx = "*"
+pyvis = "*"
+notion-client = "*"
+
+[dev-packages]
+black = "*"
+ruff = "*"
+pytest = "*"
+
+[scripts]
+api = "uvicorn backend.api:app --host 127.0.0.1 --port --reload"
+ui = "streamlit run frontend/app.py --server.port 8501 --server.address 127.0.0.1"
+ingest = "python tools/ingest.py"
