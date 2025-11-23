@@ -19,8 +19,8 @@ def sql() -> sqlite3.Connection:
     ensure_dirs()
     con = sqlite3.connect(DB_PATH)
     con.row_factory = sqlite3.Row
-    con.execute("PRAGMA journal_mode=WAL;"
-    con.execute("PRAGMA synchrous=FULL;"))
+    con.execute("PRAGMA journal_mode=WAL;")
+    con.execute("PRAGMA synchrous=FULL;")
     return con
 
 _chroma_client = None

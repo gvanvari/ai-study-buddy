@@ -12,6 +12,15 @@ CREATE TABLE IF NOT EXISTS TOPICS(
     difficulty INTEGER DEFAULT 2,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
 );
+
+CREATE TABLE IF NOT EXISTS attempts(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    topic_id TEXT NOT NULL,
+    ts DATETIME DEFAULT CURRENT_TIMESTAMP,
+    score REAL,
+    feedback TEXT,
+    meta JSON
+)
 """
 
 SEED_TOPICS = [
@@ -24,8 +33,8 @@ def init_db():
     con = sql()
     con.executescript(SCHEMA)
 
-    cur = con.execute("SELECT COUNT(*) FROM TOPICS;")
-    if cur.fetchone()[0] == 0:
+    cur = con.execute("SELECT COUNT(*) as c FROM topics")
+    if cur.fetchone()["c"] == 0:
         con.executeany(
             "INSERT INTO TOPICS (id, domain, name, prereq_ids, difficulty) VALUES (?,?,?,?,?);",
             SEED_TOPICS ,
