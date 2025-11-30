@@ -1,0 +1,18 @@
+# Generated from Pipfile (no pinned versions)
+fastapi
+uvicorn[standard]
+streamlit
+chromadb
+sentence-transformers
+sqlalchemy
+pydantic
+python-dotenv
+httpx
+networkx
+pyvis
+langchain
+langchain-openai
+langchain-community
+openai
+crewai
+chromadb
