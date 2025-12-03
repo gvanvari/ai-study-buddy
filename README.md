@@ -54,3 +54,5 @@ ai-studdy-buddy/
     .env.example
     README.md
 ```
+
+pip install --user pipenv

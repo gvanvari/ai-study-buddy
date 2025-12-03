@@ -19,6 +19,10 @@ httpx = "*"
 networkx = "*"
 pyvis = "*"
 notion-client = "*"
+crewai = "*"
+langchain-openai = "*"
+langchain-core = "*"
+langchain-community = "*"
 
 [dev-packages]
 black = "*"
@@ -26,6 +30,6 @@ ruff = "*"
 pytest = "*"
 
 [scripts]
-api = "uvicorn backend.api:app --host 127.0.0.1 --port --reload"
+api = "uvicorn backend.api:app --host 127.0.0.1 --port 8000 --reload"
 ui = "streamlit run frontend/app.py --server.port 8501 --server.address 127.0.0.1"
 ingest = "python tools/ingest.py"
