@@ -25,20 +25,18 @@ visualization dashboard - show your current progress, weak areas, and inter topi
 - visualization dashboard
   display- knowledge graph of all topics, node color=mastery, glow= due/overdue, click view details, recent attempts, start quiz button
   optional - domain coverage, weekly progress metrics,
+ - local first architecture
+   runs entirely on laptop
 
-- local first architecture
-  runs entirely on laptop
+ - backup: Windows Task Scheduler + git (or a cross-platform backup script)
 
-## tools
+ - env: pipenv (or use `venv` + `pip` on Windows)
 
-orchestration - crewai/autogen - define multiple cooperating agents(curriculum,quiz,coach,historian)
 backend framework - fastapi - rest api for communication between dashboards and agents
 frontend - streamlit - easy dashboard for skill graph and stats
 graph redering - networkx+ pyvis or plotly - visualize knowledge graph interactively
 database - sqllite
 persistence utilities - sqlalchemy/sqlite-utils
-env - pipenv
-backup cron + git
 
 ## system architecture
 
